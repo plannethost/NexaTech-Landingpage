@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documentation - NexaTech</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-grid">
+  <!-- Navigation -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon"><i class="fa-solid fa-bolt"></i></div>
+        <span class="logo-text">NexaTech</span>
+      </a>
+      
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="docs.html" class="active">Documentation</a></li>
+      </ul>
+
+      <a href="docs.html" class="nav-cta">Get Started</a>
+
+      <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Documentation Hero -->
+  <section class="docs-hero">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Documentation</span>
+        <h1 class="section-title">
+          NexaTech <span class="text-gradient">Docs</span>
+        </h1>
+        <p class="section-subtitle">
+          Panduan lengkap untuk menggunakan platform NexaTech. Dari setup awal hingga advanced features.
+        </p>
+      </div>
+
+      <div class="docs-container">
+        <!-- Sidebar -->
+        <div class="docs-sidebar">
+          <div class="docs-sidebar-sticky">
+            <div class="docs-search-wrapper">
+              <i class="fa-solid fa-magnifying-glass docs-search-icon"></i>
+              <input type="text" class="docs-search" placeholder="Cari dokumentasi..." id="docsSearch">
+            </div>
+            
+            <ul class="docs-nav" id="docsNav">
+              <li class="docs-nav-item active" onclick="showDocSection('getting-started')" data-doc="getting-started">
+                <i class="fa-solid fa-book"></i> Getting Started
+              </li>
+              <li class="docs-nav-item" onclick="showDocSection('authentication')" data-doc="authentication">
+                <i class="fa-solid fa-key"></i> Authentication
+              </li>
+              <li class="docs-nav-item" onclick="showDocSection('api-reference')" data-doc="api-reference">
+                <i class="fa-solid fa-code"></i> API Reference
+              </li>
+              <li class="docs-nav-item" onclick="showDocSection('database')" data-doc="database">
+                <i class="fa-solid fa-database"></i> Database
+              </li>
+              <li class="docs-nav-item" onclick="showDocSection('cloud-functions')" data-doc="cloud-functions">
+                <i class="fa-solid fa-cloud"></i> Cloud Functions
+              </li>
+              <li class="docs-nav-item" onclick="showDocSection('webhooks')" data-doc="webhooks">
+                <i class="fa-solid fa-link"></i> Webhooks
+              </li>
+              <li class="docs-nav-item" onclick="showDocSection('security')" data-doc="security">
+                <i class="fa-solid fa-shield-halved"></i> Security
+              </li>
+              <li class="docs-nav-item" onclick="showDocSection('sdk')" data-doc="sdk">
+                <i class="fa-solid fa-gear"></i> SDK & Libraries
+              </li>
+              <li class="docs-nav-item" onclick="showDocSection('deployment')" data-doc="deployment">
+                <i class="fa-solid fa-rocket"></i> Deployment
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Content -->
+        <div class="docs-content">
+          <!-- Getting Started -->
+          <div class="docs-section active" id="getting-started">
+            <div class="docs-section-header">
+              <div class="docs-section-icon"><i class="fa-solid fa-book"></i></div>
+              <h2 class="docs-section-title">Getting Started</h2>
+            </div>
+            <p class="docs-section-description">
+              Selamat datang di dokumentasi NexaTech! Panduan ini akan membantu Anda memulai dengan platform kami. 
+              NexaTech menyediakan API yang powerful untuk membangun aplikasi modern dengan mudah.
+            </p>
+            <div class="code-block">
+              <div class="code-header">
+                <div class="code-language">
+                  <i class="fa-solid fa-terminal"></i> bash
+                </div>
+                <button class="code-copy-btn" onclick="copyCode(this)">
+                  <i class="fa-regular fa-copy"></i> Copy
+                </button>
+              </div>
+              <div class="code-content">
+                <pre># Install NexaTech CLI
+npm install -g @nexatech/cli
+
+# Initialize your project
+nexatech init my-project
+
+# Start development server
+cd my-project
+nexatech dev</pre>
+              </div>
+            </div>
+          </div>
+
+          <!-- Authentication -->
+          <div class="docs-section" id="authentication">
+            <div class="docs-section-header">
+              <div class="docs-section-icon"><i class="fa-solid fa-key"></i></div>
+              <h2 class="docs-section-title">Authentication</h2>
+            </div>
+            <p class="docs-section-description">
+              Semua request ke API NexaTech memerlukan autentikasi. Kami menggunakan API Key dan OAuth 2.0 untuk autentikasi. 
+              Dapatkan API Key Anda dari dashboard.
+            </p>
+            <div class="code-block">
+              <div class="code-header">
+                <div class="code-language">
+                  <i class="fa-solid fa-code"></i> javascript
+                </div>
+                <button class="code-copy-btn" onclick="copyCode(this)">
+                  <i class="fa-regular fa-copy"></i> Copy
+                </button>
+              </div>
+              <div class="code-content">
+                <pre>// Include API Key in request headers
+const response = await fetch('https://api.nexatech.io/v1/data', {
+  headers: {
+    'Authorization': 'Bearer YOUR_API_KEY',
+    'Content-Type': 'application/json',
+    'X-Project-ID': 'your-project-id'
+  }
+});
+
+const data = await response.json();
+console.log(data);</pre>
+              </div>
+            </div>
+            <h3 class="docs-subtitle">Endpoints</h3>
+            <table class="endpoints-table">
+              <thead>
+                <tr>
+                  <th>Method</th>
+                  <th>Path</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="method-badge method-post">POST</span></td>
+                  <td><code class="endpoint-path">/auth/login</code></td>
+                  <td>Authenticate user and get token</td>
+                </tr>
+                <tr>
+                  <td><span class="method-badge method-post">POST</span></td>
+                  <td><code class="endpoint-path">/auth/refresh</code></td>
+                  <td>Refresh access token</td>
+                </tr>
+                <tr>
+                  <td><span class="method-badge method-post">POST</span></td>
+                  <td><code class="endpoint-path">/auth/logout</code></td>
+                  <td>Invalidate current session</td>
+                </tr>
+                <tr>
+                  <td><span class="method-badge method-get">GET</span></td>
+                  <td><code class="endpoint-path">/auth/verify</code></td>
+                  <td>Verify token validity</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- API Reference -->
+          <div class="docs-section" id="api-reference">
+            <div class="docs-section-header">
+              <div class="docs-section-icon"><i class="fa-solid fa-code"></i></div>
+              <h2 class="docs-section-title">API Reference</h2>
+            </div>
+            <p class="docs-section-description">
+              API NexaTech mengikuti standar RESTful. Semua endpoint menerima dan mengembalikan data dalam format JSON. 
+              Base URL untuk semua request adalah https://api.nexatech.io/v1.
+            </p>
+            <div class="code-block">
+              <div class="code-header">
+                <div class="code-language">
+                  <i class="fa-solid fa-code"></i> javascript
+                </div>
+                <button class="code-copy-btn" onclick="copyCode(this)">
+                  <i class="fa-regular fa-copy"></i> Copy
+                </button>
+              </div>
+              <div class="code-content">
+                <pre>// GET - Retrieve data
+const users = await nexatech.get('/users', {
+  page: 1,
+  limit: 20,
+  sort: 'created_at:desc'
+});
+
+// POST - Create new resource
+const newUser = await nexatech.post('/users', {
+  name: 'John Doe',
+  email: 'john@example.com',
+  role: 'developer'
+});
+
+// PUT - Update resource
+await nexatech.put('/users/123', {
+  name: 'John Updated'
+});
+
+// DELETE - Remove resource
+await nexatech.delete('/users/123');</pre>
+              </div>
+            </div>
+            <h3 class="docs-subtitle">Endpoints</h3>
+            <table class="endpoints-table">
+              <thead>
+                <tr>
+                  <th>Method</th>
+                  <th>Path</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="method-badge method-get">GET</span></td>
+                  <td><code class="endpoint-path">/users</code></td>
+                  <td>List all users</td>
+                </tr>
+                <tr>
+                  <td><span class="method-badge method-post">POST</span></td>
+                  <td><code class="endpoint-path">/users</code></td>
+                  <td>Create a new user</td>
+                </tr>
+                <tr>
+                  <td><span class="method-badge method-get">GET</span></td>
+                  <td><code class="endpoint-path">/users/:id</code></td>
+                  <td>Get user by ID</td>
+                </tr>
+                <tr>
+                  <td><span class="method-badge method-put">PUT</span></td>
+                  <td><code class="endpoint-path">/users/:id</code></td>
+                  <td>Update user</td>
+                </tr>
+                <tr>
+                  <td><span class="method-badge method-delete">DELETE</span></td>
+                  <td><code class="endpoint-path">/users/:id</code></td>
+                  <td>Delete user</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Database -->
+          <div class="docs-section" id="database">
+            <div class="docs-section-header">
+              <div class="docs-section-icon"><i class="fa-solid fa-database"></i></div>
+              <h2 class="docs-section-title">Database</h2>
+            </div>
+            <p class="docs-section-description">
+              NexaTech menyediakan managed database service yang support PostgreSQL, MySQL, dan MongoDB. 
+              Database Anda di-host dengan high availability dan automatic backups.
+            </p>
+            <div class="code-block">
+              <div class="code-header">
+                <div class="code-language">
+                  <i class="fa-solid fa-code"></i> javascript
+                </div>
+                <button class="code-copy-btn" onclick="copyCode(this)">
+                  <i class="fa-regular fa-copy"></i> Copy
+                </button>
+              </div>
+              <div class="code-content">
+                <pre>import { createClient } from '@nexatech/database';
+
+const db = createClient({
+  connectionString: process.env.NEXATECH_DB_URL,
+  pool: { max: 20, min: 5 }
+});
+
+// Query data
+const users = await db.query(`
+  SELECT * FROM users 
+  WHERE status = 'active'
+  ORDER BY created_at DESC
+  LIMIT 10
+`);
+
+// Insert data
+await db.query(`
+  INSERT INTO users (name, email, role)
+  VALUES ($1, $2, $3)
+`, ['John', 'john@example.com', 'admin']);
+
+// Transactions
+await db.transaction(async (tx) => {
+  await tx.query('UPDATE accounts SET balance = balance - $1 WHERE id = $2', [100, 1]);
+  await tx.query('UPDATE accounts SET balance = balance + $1 WHERE id = $2', [100, 2]);
+});</pre>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cloud Functions -->
+          <div class="docs-section" id="cloud-functions">
+            <div class="docs-section-header">
+              <div class="docs-section-icon"><i class="fa-solid fa-cloud"></i></div>
+              <h2 class="docs-section-title">Cloud Functions</h2>
+            </div>
+            <p class="docs-section-description">
+              Deploy serverless functions yang auto-scale sesuai demand. Support Node.js, Python, dan Go. 
+              Fungsi Anda akan di-deploy ke edge locations terdekat.
+            </p>
+            <div class="code-block">
+              <div class="code-header">
+                <div class="code-language">
+                  <i class="fa-solid fa-code"></i> typescript
+                </div>
+                <button class="code-copy-btn" onclick="copyCode(this)">
+                  <i class="fa-regular fa-copy"></i> Copy
+                </button>
+              </div>
+              <div class="code-content">
+                <pre>// functions/hello.ts
+import { NexaFunction, HttpRequest, HttpResponse } from '@nexatech/functions';
+
+export const handler: NexaFunction = async (
+  req: HttpRequest
+): Promise&lt;HttpResponse&gt; => {
+  const { name = 'World' } = req.query;
+  
+  return {
+    statusCode: 200,
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      message: `Hello, ${name}!`,
+      timestamp: new Date().toISOString(),
+      region: req.region
+    })
+  };
+};
+
+// nexatech.config.ts
+export default {
+  functions: {
+    hello: {
+      runtime: 'nodejs20',
+      memory: 256,
+      timeout: 30,
+      regions: ['ap-southeast-1', 'us-east-1']
+    }
+  }
+};</pre>
+              </div>
+            </div>
+          </div>
+
+          <!-- Webhooks -->
+          <div class="docs-section" id="webhooks">
+            <div class="docs-section-header">
+              <div class="docs-section-icon"><i class="fa-solid fa-link"></i></div>
+              <h2 class="docs-section-title">Webhooks</h2>
+            </div>
+            <p class="docs-section-description">
+              Terima notifikasi real-time ketika event terjadi di platform Anda. 
+              Webhooks dikirim sebagai HTTP POST request ke URL yang Anda tentukan.
+            </p>
+            <div class="code-block">
+              <div class="code-header">
+                <div class="code-language">
+                  <i class="fa-solid fa-code"></i> javascript
+                </div>
+                <button class="code-copy-btn" onclick="copyCode(this)">
+                  <i class="fa-regular fa-copy"></i> Copy
+                </button>
+              </div>
+              <div class="code-content">
+                <pre>// Register webhook endpoint
+await nexatech.webhooks.create({
+  url: 'https://your-app.com/webhooks/nexatech',
+  events: ['user.created', 'user.updated', 'payment.completed'],
+  secret: 'whsec_your_secret_key'
+});
+
+// Verify webhook signature (Node.js)
+import crypto from 'crypto';
+
+function verifyWebhook(payload, signature, secret) {
+  const expected = crypto
+    .createHmac('sha256', secret)
+    .update(payload)
+    .digest('hex');
+  
+  return crypto.timingSafeEqual(
+    Buffer.from(signature),
+    Buffer.from(expected)
+  );
+}
+
+// Express webhook handler
+app.post('/webhooks/nexatech', (req, res) => {
+  const signature = req.headers['x-nexatech-signature'];
+  
+  if (!verifyWebhook(req.rawBody, signature, WEBHOOK_SECRET)) {
+    return res.status(401).send('Invalid signature');
+  }
+  
+  const event = req.body;
+  console.log('Event received:', event.type);
+  
+  res.status(200).send('OK');
+});</pre>
+              </div>
+            </div>
+          </div>
+
+          <!-- Security -->
+          <div class="docs-section" id="security">
+            <div class="docs-section-header">
+              <div class="docs-section-icon"><i class="fa-solid fa-shield-halved"></i></div>
+              <h2 class="docs-section-title">Security</h2>
+            </div>
+            <p class="docs-section-description">
+              Keamanan adalah prioritas utama kami. Semua data dienkripsi saat transit (TLS 1.3) dan at rest (AES-256). 
+              Kami juga compliant dengan SOC 2, GDPR, dan ISO 27001.
+            </p>
+            <div class="code-block">
+              <div class="code-header">
+                <div class="code-language">
+                  <i class="fa-solid fa-code"></i> javascript
+                </div>
+                <button class="code-copy-btn" onclick="copyCode(this)">
+                  <i class="fa-regular fa-copy"></i> Copy
+                </button>
+              </div>
+              <div class="code-content">
+                <pre>// Enable additional security features
+await nexatech.security.configure({
+  // Enable rate limiting
+  rateLimit: {
+    window: '15m',
+    max: 100
+  },
+  
+  // Enable IP allowlist
+  ipAllowlist: ['192.168.1.0/24', '10.0.0.0/8'],
+  
+  // Enable audit logging
+  auditLog: {
+    enabled: true,
+    retention: '90d',
+    events: ['auth', 'data.access', 'data.modify']
+  },
+  
+  // Enable 2FA requirement
+  mfa: {
+    required: true,
+    methods: ['totp', 'webauthn']
+  }
+});</pre>
+              </div>
+            </div>
+          </div>
+
+          <!-- SDK -->
+          <div class="docs-section" id="sdk">
+            <div class="docs-section-header">
+              <div class="docs-section-icon"><i class="fa-solid fa-gear"></i></div>
+              <h2 class="docs-section-title">SDK & Libraries</h2>
+            </div>
+            <p class="docs-section-description">
+              Kami menyediakan SDK resmi untuk berbagai bahasa pemrograman. 
+              Semua SDK open source dan tersedia di GitHub.
+            </p>
+            <div class="code-block">
+              <div class="code-header">
+                <div class="code-language">
+                  <i class="fa-solid fa-code"></i> typescript
+                </div>
+                <button class="code-copy-btn" onclick="copyCode(this)">
+                  <i class="fa-regular fa-copy"></i> Copy
+                </button>
+              </div>
+              <div class="code-content">
+                <pre>// JavaScript/TypeScript
+import { NexaTech } from '@nexatech/sdk';
+const client = new NexaTech({ apiKey: process.env.NEXA_API_KEY });
+
+// Python
+from nexatech import NexaTech
+client = NexaTech(api_key=os.environ["NEXA_API_KEY"])
+
+// Go
+import "github.com/nexatech/sdk-go"
+client := nexatech.NewClient(os.Getenv("NEXA_API_KEY"))
+
+// Usage example (TypeScript)
+const users = await client.users.list({
+  page: 1,
+  limit: 20,
+  filter: { status: 'active' }
+});
+
+// Streaming support
+const stream = await client.ai.chat({
+  model: 'nexa-gpt-4',
+  messages: [{ role: 'user', content: 'Hello!' }],
+  stream: true
+});
+
+for await (const chunk of stream) {
+  process.stdout.write(chunk.content);
+}</pre>
+              </div>
+            </div>
+          </div>
+
+          <!-- Deployment -->
+          <div class="docs-section" id="deployment">
+            <div class="docs-section-header">
+              <div class="docs-section-icon"><i class="fa-solid fa-rocket"></i></div>
+              <h2 class="docs-section-title">Deployment</h2>
+            </div>
+            <p class="docs-section-description">
+              Deploy aplikasi Anda ke NexaTech Cloud dengan mudah. Support CI/CD, preview deployments, 
+              dan automatic scaling.
+            </p>
+            <div class="code-block">
+              <div class="code-header">
+                <div class="code-language">
+                  <i class="fa-solid fa-terminal"></i> yaml
+                </div>
+                <button class="code-copy-btn" onclick="copyCode(this)">
+                  <i class="fa-regular fa-copy"></i> Copy
+                </button>
+              </div>
+              <div class="code-content">
+                <pre># Deploy to production
+nexatech deploy --env production
+
+# Deploy with custom config
+nexatech deploy --config nexatech.prod.yml
+
+# Preview deployment
+nexatech deploy --preview
+
+# Rollback to previous version
+nexatech rollback --version v1.2.3
+
+# CI/CD - GitHub Actions
+name: Deploy
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: nexatech/deploy-action@v2
+        with:
+          api-key: ${{ secrets.NEXA_API_KEY }}
+          project: my-project
+          env: production</pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <div class="logo-icon"><i class="fa-solid fa-bolt"></i></div>
+            <span class="logo-text">NexaTech</span>
+          </a>
+          <p>
+            Membangun masa depan teknologi dengan solusi inovatif dan cutting-edge untuk bisnis modern.
+          </p>
+          <div class="footer-social">
+            <a href="#"><i class="fa-brands fa-github"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#"><i class="fa-solid fa-envelope"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-column">
+          <h4>Produk</h4>
+          <ul>
+            <li><a href="#">Cloud Platform</a></li>
+            <li><a href="#">AI Engine</a></li>
+            <li><a href="#">Analytics</a></li>
+            <li><a href="#">Security</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Perusahaan</h4>
+          <ul>
+            <li><a href="about.html">Tentang Kami</a></li>
+            <li><a href="#">Karir</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Kontak</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="docs.html">Dokumentasi</a></li>
+            <li><a href="#">API Reference</a></li>
+            <li><a href="#">Tutorial</a></li>
+            <li><a href="#">Community</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 NexaTech. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

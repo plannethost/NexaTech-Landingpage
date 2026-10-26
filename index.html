@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NexaTech - Future of Technology</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-grid">
+  <!-- Navigation -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon"><i class="fa-solid fa-bolt"></i></div>
+        <span class="logo-text">NexaTech</span>
+      </a>
+      
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="docs.html">Documentation</a></li>
+      </ul>
+
+      <a href="docs.html" class="nav-cta">Get Started</a>
+
+      <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-bg">
+      <div class="hero-bg-circle hero-bg-circle-1 animate-float"></div>
+      <div class="hero-bg-circle hero-bg-circle-2 animate-float-delay"></div>
+    </div>
+
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge fade-in-up">
+          <i class="fa-solid fa-sparkles"></i> Platform Teknologi Generasi Baru
+        </div>
+
+        <h1 class="hero-title fade-in-up" style="animation-delay: 0.1s">
+          Bangun Masa Depan<br>
+          <span class="text-gradient">Dengan Teknologi</span>
+        </h1>
+
+        <p class="hero-subtitle fade-in-up" style="animation-delay: 0.2s">
+          Platform all-in-one yang menggabungkan AI, Cloud Computing, dan Advanced Analytics 
+          untuk membantu bisnis Anda bertransformasi secara digital dengan cepat dan efisien.
+        </p>
+
+        <div class="hero-buttons fade-in-up" style="animation-delay: 0.3s">
+          <a href="docs.html" class="btn btn-primary">
+            Mulai Sekarang <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <button class="btn btn-secondary">
+            <i class="fa-solid fa-play"></i> Lihat Demo
+          </button>
+        </div>
+
+        <div class="dashboard-preview fade-in-up" style="animation-delay: 0.5s">
+          <div class="dashboard-card glass-card animate-pulse-glow">
+            <div class="dashboard-header">
+              <div class="dashboard-dot" style="background: #ef4444"></div>
+              <div class="dashboard-dot" style="background: #f59e0b"></div>
+              <div class="dashboard-dot" style="background: #10b981"></div>
+              <span style="font-size: 0.75rem; color: var(--text-muted); margin-left: 0.5rem">
+                nexatech-dashboard.app
+              </span>
+            </div>
+
+            <div class="dashboard-stats">
+              <div class="dashboard-stat">
+                <div class="dashboard-stat-label">Active Users</div>
+                <div class="dashboard-stat-value">24,891</div>
+                <div class="dashboard-stat-change" style="color: #10b981">↑ 12.5%</div>
+              </div>
+              <div class="dashboard-stat">
+                <div class="dashboard-stat-label">API Calls</div>
+                <div class="dashboard-stat-value">1.2M</div>
+                <div class="dashboard-stat-change" style="color: #10b981">↑ 8.3%</div>
+              </div>
+              <div class="dashboard-stat">
+                <div class="dashboard-stat-label">Response Time</div>
+                <div class="dashboard-stat-value">32ms</div>
+                <div class="dashboard-stat-change" style="color: #06b6d4">↓ 5.1%</div>
+              </div>
+            </div>
+
+            <div class="dashboard-chart">
+              <div class="chart-bar" style="height: 40%"></div>
+              <div class="chart-bar" style="height: 65%"></div>
+              <div class="chart-bar" style="height: 45%"></div>
+              <div class="chart-bar" style="height: 80%"></div>
+              <div class="chart-bar" style="height: 55%"></div>
+              <div class="chart-bar" style="height: 90%"></div>
+              <div class="chart-bar" style="height: 70%"></div>
+              <div class="chart-bar" style="height: 85%"></div>
+              <div class="chart-bar" style="height: 60%"></div>
+              <div class="chart-bar" style="height: 95%"></div>
+              <div class="chart-bar" style="height: 75%"></div>
+              <div class="chart-bar" style="height: 88%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Fitur Unggulan</span>
+        <h2 class="section-title">Semua yang Anda Butuhkan</h2>
+        <p class="section-subtitle">
+          Platform lengkap dengan fitur-fitur canggih untuk mendukung transformasi digital bisnis Anda.
+        </p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card glass-card">
+          <div class="feature-icon" style="background: linear-gradient(135deg, #a855f7, #6366f1)">
+            <i class="fa-solid fa-brain"></i>
+          </div>
+          <h3 class="feature-title">AI-Powered Engine</h3>
+          <p class="feature-description">
+            Machine learning canggih yang otomatis mengoptimalkan performa sistem Anda secara real-time.
+          </p>
+        </div>
+
+        <div class="feature-card glass-card">
+          <div class="feature-icon" style="background: linear-gradient(135deg, #06b6d4, #3b82f6)">
+            <i class="fa-solid fa-cloud"></i>
+          </div>
+          <h3 class="feature-title">Cloud Infrastructure</h3>
+          <p class="feature-description">
+            Infrastruktur cloud yang scalable dan reliable dengan uptime 99.99% guarantee.
+          </p>
+        </div>
+
+        <div class="feature-card glass-card">
+          <div class="feature-icon" style="background: linear-gradient(135deg, #10b981, #14b8a6)">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <h3 class="feature-title">Advanced Security</h3>
+          <p class="feature-description">
+            Proteksi enterprise-grade dengan enkripsi end-to-end dan zero-trust architecture.
+          </p>
+        </div>
+
+        <div class="feature-card glass-card">
+          <div class="feature-icon" style="background: linear-gradient(135deg, #f59e0b, #f97316)">
+            <i class="fa-solid fa-chart-line"></i>
+          </div>
+          <h3 class="feature-title">Real-time Analytics</h3>
+          <p class="feature-description">
+            Dashboard analytics interaktif dengan visualisasi data yang powerful dan insightful.
+          </p>
+        </div>
+
+        <div class="feature-card glass-card">
+          <div class="feature-icon" style="background: linear-gradient(135deg, #ec4899, #f43f5e)">
+            <i class="fa-solid fa-globe"></i>
+          </div>
+          <h3 class="feature-title">Global CDN</h3>
+          <p class="feature-description">
+            Content delivery network global yang memastikan performa optimal di seluruh dunia.
+          </p>
+        </div>
+
+        <div class="feature-card glass-card">
+          <div class="feature-icon" style="background: linear-gradient(135deg, #8b5cf6, #a855f7)">
+            <i class="fa-solid fa-cubes"></i>
+          </div>
+          <h3 class="feature-title">Microservices</h3>
+          <p class="feature-description">
+            Arsitektur microservices yang modular dan mudah di-scale sesuai kebutuhan bisnis.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">
+          Dipercaya oleh <span class="text-gradient">Ribuan Developer</span>
+        </h2>
+        <p class="section-subtitle">
+          Angka-angka yang membuktikan komitmen kami terhadap kualitas dan performa.
+        </p>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card glass-card">
+          <div class="stat-value text-gradient">99.99%</div>
+          <div class="stat-label">Uptime SLA</div>
+        </div>
+        <div class="stat-card glass-card">
+          <div class="stat-value text-gradient">150+</div>
+          <div class="stat-label">Countries</div>
+        </div>
+        <div class="stat-card glass-card">
+          <div class="stat-value text-gradient">10M+</div>
+          <div class="stat-label">API Calls/Day</div>
+        </div>
+        <div class="stat-card glass-card">
+          <div class="stat-value text-gradient">&lt;50ms</div>
+          <div class="stat-label">Avg Response</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech Stack Section -->
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge" style="color: var(--secondary)">Tech Stack</span>
+        <h2 class="section-title">Dibangun dengan Teknologi Terbaik</h2>
+      </div>
+
+      <div class="tech-stack">
+        <div class="tech-badge">React</div>
+        <div class="tech-badge">TypeScript</div>
+        <div class="tech-badge">Node.js</div>
+        <div class="tech-badge">GraphQL</div>
+        <div class="tech-badge">Kubernetes</div>
+        <div class="tech-badge">Docker</div>
+        <div class="tech-badge">AWS</div>
+        <div class="tech-badge">TensorFlow</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge" style="color: var(--accent)">Cara Kerja</span>
+        <h2 class="section-title">Mulai dalam 3 Langkah Mudah</h2>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card glass-card">
+          <div class="step-number">01</div>
+          <div class="step-icon"><i class="fa-solid fa-code"></i></div>
+          <h3 class="step-title">Integrasi</h3>
+          <p class="step-description">
+            Hubungkan platform Anda dengan NexaTech melalui API kami yang simple dan powerful.
+          </p>
+        </div>
+
+        <div class="step-card glass-card">
+          <div class="step-number">02</div>
+          <div class="step-icon"><i class="fa-solid fa-rocket"></i></div>
+          <h3 class="step-title">Deploy</h3>
+          <p class="step-description">
+            Deploy aplikasi Anda ke cloud infrastructure kami dengan satu klik.
+          </p>
+        </div>
+
+        <div class="step-card glass-card">
+          <div class="step-number">03</div>
+          <div class="step-icon"><i class="fa-solid fa-chart-line"></i></div>
+          <h3 class="step-title">Scale</h3>
+          <p class="step-description">
+            Scale otomatis sesuai traffic. Bayar hanya untuk yang Anda gunakan.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-card glass-card">
+        <div class="cta-bg"></div>
+        <div class="cta-overlay"></div>
+        <div class="cta-content">
+          <h2 class="cta-title">Siap Memulai Perjalanan Digital?</h2>
+          <p class="cta-subtitle">
+            Bergabung dengan ribuan developer dan perusahaan yang telah bertransformasi bersama NexaTech.
+          </p>
+          <div class="hero-buttons">
+            <a href="docs.html" class="btn btn-primary">
+              Baca Dokumentasi <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <a href="about.html" class="btn btn-secondary">
+              Pelajari Lebih Lanjut
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <div class="logo-icon"><i class="fa-solid fa-bolt"></i></div>
+            <span class="logo-text">NexaTech</span>
+          </a>
+          <p>
+            Membangun masa depan teknologi dengan solusi inovatif dan cutting-edge untuk bisnis modern.
+          </p>
+          <div class="footer-social">
+            <a href="#"><i class="fa-brands fa-github"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#"><i class="fa-solid fa-envelope"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-column">
+          <h4>Produk</h4>
+          <ul>
+            <li><a href="#">Cloud Platform</a></li>
+            <li><a href="#">AI Engine</a></li>
+            <li><a href="#">Analytics</a></li>
+            <li><a href="#">Security</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Perusahaan</h4>
+          <ul>
+            <li><a href="about.html">Tentang Kami</a></li>
+            <li><a href="#">Karir</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Kontak</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="docs.html">Dokumentasi</a></li>
+            <li><a href="#">API Reference</a></li>
+            <li><a href="#">Tutorial</a></li>
+            <li><a href="#">Community</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 NexaTech. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
